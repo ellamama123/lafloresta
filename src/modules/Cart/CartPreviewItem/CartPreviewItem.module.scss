@@ -1,0 +1,18 @@
+.cart-preview-item {
+  margin-bottom: 2.5rem;
+
+  display: flex;
+  justify-content: space-between;
+
+  &-summary {
+    display: flex;
+
+    &-image {
+      position: relative;
+      height: 5rem;
+      width: 5rem;
+
+      margin-right: 1rem;
+    }
+  }
+}

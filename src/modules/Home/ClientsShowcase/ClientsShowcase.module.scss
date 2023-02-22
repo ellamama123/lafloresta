@@ -1,0 +1,30 @@
+.clients-showcase {
+  text-align: center;
+
+  &-title {
+    margin-bottom: 3.5rem;
+  }
+
+  &-carousel {
+    position: relative;
+    overflow: hidden;
+
+    &-content {
+      overflow: hidden;
+      display: flex;
+      flex-wrap: nowrap;
+      width: 200%;
+      transform: translate3d();
+      animation: slideshow 10s linear infinite;
+    }
+  }
+}
+
+@keyframes slideshow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -1,0 +1,31 @@
+@import '../../../../../shared/styles/colors.scss';
+
+.blog-item {
+  background-color: $white;
+  margin: 0 1rem;
+  padding: 1rem;
+
+  &-details {
+    text-align: left;
+    margin-top: 1rem;
+
+    &-description {
+      margin-top: 0.5rem;
+    }
+
+    &-cta {
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &-text {
+        color: $grey-3;
+      }
+
+      &-button-text {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}

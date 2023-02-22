@@ -1,0 +1,35 @@
+.product-details-image {
+  $control-item-dimension: 10vw;
+  $control-item-space: 1.5rem;
+  $control-item-display-count: 3;
+
+  $section-height: calc(
+    $control-item-display-count * $control-item-dimension + $control-item-space *
+      ($control-item-display-count - 1)
+  );
+
+  display: flex;
+
+  &-control {
+    height: $section-height;
+    overflow: auto;
+
+    &-item {
+      display: block;
+      width: $control-item-dimension;
+      height: $control-item-dimension;
+
+      margin-bottom: $control-item-space;
+
+      position: relative;
+    }
+  }
+
+  &-display {
+    position: relative;
+    height: $section-height;
+    width: calc($section-height/ 1.5);
+
+    margin-left: $control-item-space;
+  }
+}

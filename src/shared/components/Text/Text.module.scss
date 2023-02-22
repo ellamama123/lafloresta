@@ -1,0 +1,49 @@
+@import '../../styles/colors.scss';
+
+.title {
+  font-weight: 300;
+  font-family: 'SVN Schnyder';
+  color: $primary-text-color-main;
+}
+
+.h1 {
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+
+.h2 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.h4 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.h5 {
+  font-family: 'Helvetica Neue';
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.body {
+  font-weight: 300;
+  font-family: 'Helvetica Neue';
+  color: $primary-text-color-sub;
+}
+
+.body-1 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.body-2 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}

@@ -1,0 +1,13 @@
+.products {
+  text-align: center;
+
+  &-cta {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+    &-navigator {
+      display: flex;
+    }
+  }
+}

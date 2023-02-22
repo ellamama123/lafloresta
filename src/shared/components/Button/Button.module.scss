@@ -1,0 +1,47 @@
+@import '../../styles/colors.scss';
+
+.button {
+  font-family: 'Helvetica Neue';
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+
+  padding: 1rem 1.5rem;
+
+  display: flex;
+  align-items: center;
+
+  &-disabled {
+    opacity: 0.5;
+    &:hover {
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
+}
+
+.filled {
+  background-color: $black-1;
+  color: $white;
+  border: 1px solid $black-1;
+}
+
+.outlined {
+  background-color: $transparent;
+  color: $black-1;
+  border: 1px solid $black-1;
+}
+
+.text {
+  background-color: $transparent;
+  color: $black-1;
+  border: 1px solid $transparent;
+}
+
+.cta {
+  background-color: $transparent;
+  color: $black-1;
+  border: 1px solid $transparent;
+  text-decoration: underline;
+  padding: 0;
+}

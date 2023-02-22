@@ -1,0 +1,25 @@
+@import '../../../styles/colors.scss';
+
+.badge {
+  position: relative;
+
+  &-item {
+    position: absolute;
+    right: -0.3rem;
+    top: -0.3rem;
+
+    background-color: $red-1;
+    color: $white;
+
+    font-size: 0.7rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 1rem;
+    height: 1rem;
+
+    border-radius: 0.5rem;
+  }
+}

@@ -1,0 +1,22 @@
+@import '../../../shared/styles/colors.scss';
+
+.cart-page-form {
+  padding: 2.5rem;
+
+  &-heading {
+    color: $black-1;
+    margin-bottom: 1.5rem;
+  }
+
+  &-line {
+    background-color: $grey-1;
+    height: 1px;
+    margin-bottom: 1.5rem;
+  }
+
+  &-btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+}

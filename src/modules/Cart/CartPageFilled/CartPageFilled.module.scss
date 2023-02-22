@@ -1,0 +1,11 @@
+.cart {
+  display: flex;
+
+  &-preview {
+    flex: 1;
+  }
+
+  &-form {
+    flex: 1;
+  }
+}

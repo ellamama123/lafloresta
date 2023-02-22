@@ -1,0 +1,29 @@
+.product-item {
+  // width: 24%;
+  margin: 0 1rem;
+
+  text-align: left;
+
+  &-image {
+    opacity: 1;
+    transition: opacity 500ms ease;
+
+    &:hover{
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+
+  &-details {
+    margin-top: 1rem;
+
+    &-size {
+      display: flex;
+      margin: 1.5rem 0 0.5rem 0;
+
+      &-label {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}

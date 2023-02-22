@@ -1,0 +1,17 @@
+@import '../../../shared/styles/colors.scss';
+
+.blogs {
+  background-color: $primary-color-4;
+  padding: 4.5rem 4.5rem 4.5rem 4.5rem;
+  text-align: center;
+
+  &-cta {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+    &-navigator {
+      display: flex;
+    }
+  }
+}

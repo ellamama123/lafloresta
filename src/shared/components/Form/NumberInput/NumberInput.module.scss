@@ -1,0 +1,22 @@
+@import '../../../styles/constants.scss';
+@import '../../../styles/colors.scss';
+
+.number-input {
+  font-size: 1.5rem;
+  text-align: center;
+
+  border: 2px solid $black-1;
+  border-radius: 0;
+
+  width: 100%;
+  height: 100%;
+
+  &:focus {
+    outline: $s1 solid $blue-1;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+}

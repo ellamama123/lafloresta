@@ -1,0 +1,14 @@
+@import '../../styles/colors.scss';
+
+.page-header {
+  background-color: $grey-2;
+  background-image: url('../../assets/img/LivingRoom.jpg');
+  background-position: center;
+  background-blend-mode: multiply;
+
+  padding: 5rem 5rem;
+
+  &-text {
+    color: $white-1;
+  }
+}

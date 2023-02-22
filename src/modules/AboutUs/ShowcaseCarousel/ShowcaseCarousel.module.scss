@@ -1,0 +1,20 @@
+@import '../../../shared/styles/colors.scss';
+
+.showcase-carousel {
+  background-color: $primary-color-4;
+  padding-bottom: 4rem;
+  padding-top: 2rem;
+
+  &-text {
+    text-align: center;
+    margin-bottom: 4rem;
+    &-title {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &-logo-item {
+    padding: 1rem;
+    text-align: center;
+  }
+}

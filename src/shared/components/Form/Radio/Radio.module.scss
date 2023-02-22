@@ -1,0 +1,27 @@
+@import '../../../styles/constants.scss';
+@import '../../../styles/colors.scss';
+
+.radio {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+
+  transition: opacity 0.5s ease;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+
+  &-label {
+    flex: 2;
+    text-align: center;
+    margin-left: 1rem;
+
+    &-checked {
+      color: $blue-1;
+    }
+  }
+}

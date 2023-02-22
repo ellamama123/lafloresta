@@ -1,0 +1,11 @@
+@import '../../styles/colors.scss';
+
+.logo {
+  &-primary {
+    color: $primary-text-color-main;
+  }
+
+  &-secondary {
+    color: $secondary-text-color-main;
+  }
+}

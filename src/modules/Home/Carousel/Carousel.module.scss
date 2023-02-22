@@ -1,0 +1,83 @@
+@import '../../../shared/styles/colors.scss';
+
+.carousel {
+  position: relative;
+
+  &-item {
+    position: relative;
+    height: 50vw;
+    width: 100vw;
+  }
+
+  &-slider {
+    position: relative;
+  }
+
+  &-dot {
+    z-index: 1;
+
+    $dot-size: 0.25rem;
+    $dot-margin: 0.5rem;
+
+    width: $dot-size;
+    height: $dot-size;
+
+    &-wrapper {
+      li {
+        margin-left: $dot-margin;
+      }
+    }
+
+    &-content {
+      width: $dot-size;
+      height: $dot-size;
+
+      border: 1px solid white;
+      padding: $dot-size;
+      border-radius: $dot-size;
+
+      transition: opacity 0.5s ease;
+
+      position: relative;
+
+      &::after {
+        content: ' ';
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: $dot-size;
+        height: $dot-size;
+        border-radius: calc($dot-size/2);
+      }
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &-selected {
+        &::after {
+          background-color: $white;
+        }
+      }
+    }
+  }
+
+  &-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    $arrow-padding: 2rem;
+
+    &-left {
+      left: $arrow-padding;
+    }
+    &-right {
+      right: $arrow-padding;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@use 'sass:color';
+
+// Color codes
+// Primary
+$brown-1: #a65e32;
+$brown-2: #d9a380;
+$light-brown-1: #e2bc9f;
+$light-brown-2: #f1ddd1;
+$white-1: #fffcf9;
+
+// Secondary
+$black-1: #262626;
+$grey-1: #6f6f6f;
+$grey-2: #8e8e8e;
+$grey-3: #b3b3b3;
+$grey-4: #d9d9d9;
+$white: #ffffff;
+$transparent: rgba(0, 0, 0, 0);
+
+// Semantic
+$red-1: #d96471;
+$red-2: #ecb0b5;
+$red-3: #f9e5e5;
+
+$green-1: #52b677;
+$green-2: #a8d9b8;
+$green-3: #dceedf;
+
+$yellow-1: #ebaa48;
+$yellow-2: #f5d3a1;
+$yellow-3: #fbecd6;
+
+$blue-1: blue;
+
+// Design systems
+$primary-color-1: $brown-1;
+$primary-color-2: $brown-2;
+$primary-color-3: $light-brown-1;
+$primary-color-4: $light-brown-2;
+$primary-color-5: $white-1;
+$primary-color-bg: $white;
+
+$secondary-color-1: $black-1;
+$secondary-color-2: $grey-1;
+$secondary-color-3: $grey-2;
+$secondary-color-4: $grey-3;
+$secondary-color-5: $grey-4;
+
+$primary-text-color-main: $black-1;
+$primary-text-color-sub: $grey-1;
+$secondary-text-color-main: $white;
+
+$semantic-error-1: $red-1;
+$semantic-error-2: $red-2;
+$semantic-error-3: $red-3;
+
+$semantic-success-1: $green-1;
+$semantic-success-2: $green-2;
+$semantic-success-3: $green-3;
+
+$semantic-warning-1: $yellow-1;
+$semantic-warning-2: $yellow-2;
+$semantic-warning-3: $yellow-3;
+
+@function opacify($color, $opacity) {
+  @return rgba($color, $opacity);
+}
