@@ -5,9 +5,9 @@ interface WooCommerceAPIResponse<T> {
 }
 
 const api = new WooCommerceRestApi({
-  url: process.env.NEXT_PUBLIC_WC_URL!,
-  consumerKey: process.env.NEXT_PUBLIC_CONSUMER_KEY!,
-  consumerSecret: process.env.NEXT_PUBLIC_CONSUMER_SECRET!,
+  url: 'http://testweb2.site/',
+  consumerKey: 'ck_7bbc96f69917879701d60527c4b68d2655bb1e43',
+  consumerSecret: 'cs_291b65f80d1185e65d6cfe32e995f54004d8391b',
   queryStringAuth: true,
   version: 'wc/v3',
 });
