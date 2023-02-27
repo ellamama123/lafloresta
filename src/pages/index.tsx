@@ -23,8 +23,6 @@ export const getStaticProps: GetStaticProps<HomeStaticProps> = async () => {
   const featuredProducts = await getAllFeaturedProducts();
 
   const collectionItem = await getProductByParentCategory(31)
-
-
   return {
     props: {
       featuredProducts,
@@ -56,7 +54,7 @@ const Home: NextPage<HomeStaticProps> = ({ featuredProducts, collectionItem }) =
 
   const collectionItems: CollectionBannerItemType[] = collectionItem.map((data: { name: any; image: { src: any; }; }) => ({
     title: data.name,
-    ctaText: 'Test',
+    ctaText: 'Xem chi tiết',
     imageSrc: data.image.src
   }))
 

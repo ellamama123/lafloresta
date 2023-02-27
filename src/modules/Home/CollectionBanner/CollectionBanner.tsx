@@ -10,6 +10,7 @@ import styles from './CollectionBanner.module.scss';
 export type CollectionBannerItemType = {
   title: string;
   ctaText: string;
+  id: number;
   imageSrc: StaticImageData;
 };
 
@@ -21,10 +22,11 @@ const CollectionBanner: React.FC<CollectionBannerProps> = ({
   classNames = [],
   title,
   ctaText,
+  id,
   imageSrc,
 }) => {
   const router = useRouter();
-  const navigateToProducts = () => router.push('/products');
+  const navigateToProducts = (id: number) => router.push(`/collections/${id}`);
 
   return (
     <section className={c([styles['collection-banner'], ...classNames])}>
@@ -38,7 +40,7 @@ const CollectionBanner: React.FC<CollectionBannerProps> = ({
         <Button
           mode="outlined"
           classNames={[styles['collection-banner-details-button']]}
-          onClick={navigateToProducts}
+          onClick={() => navigateToProducts(id)}
         >
           <Text.Body1 classNames={[styles['collection-banner-details-text']]}>
             {ctaText}
