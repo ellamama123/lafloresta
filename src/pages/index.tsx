@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 
-import { getAllFeaturedProducts } from '../api/products';
+import { getAllFeaturedProducts, getProductByParentCategory } from '../api/products';
 import { ProductDTO } from '../api/types';
 import Blogs from '../modules/Home/Blogs';
 import Carousel, { CarouselItemType } from '../modules/Home/Carousel';
@@ -22,14 +22,18 @@ interface HomeStaticProps {
 export const getStaticProps: GetStaticProps<HomeStaticProps> = async () => {
   const featuredProducts = await getAllFeaturedProducts();
 
+  const collectionItem = await getProductByParentCategory(31)
+
+
   return {
     props: {
       featuredProducts,
+      collectionItem
     },
   };
 };
 
-const Home: NextPage<HomeStaticProps> = ({ featuredProducts }) => {
+const Home: NextPage<HomeStaticProps> = ({ featuredProducts, collectionItem }) => {
   const TOP_FEATURED_PRODUCTS_COUNT = 4;
   const topFeaturedProducts = featuredProducts.filter(
     (_, i) => i < TOP_FEATURED_PRODUCTS_COUNT
@@ -50,23 +54,11 @@ const Home: NextPage<HomeStaticProps> = ({ featuredProducts }) => {
     },
   ];
 
-  const collectionItems: CollectionBannerItemType[] = [
-    {
-      title: 'Hoa 1',
-      ctaText: 'Xem sản phẩm',
-      imageSrc: assets.MultiFlower1,
-    },
-    {
-      title: 'Hoa 2',
-      ctaText: 'Xem sản phẩm',
-      imageSrc: assets.MultiFlower2,
-    },
-    {
-      title: 'Hoa 3',
-      ctaText: 'Xem sản phẩm',
-      imageSrc: assets.OrangeFlower1,
-    },
-  ];
+  const collectionItems: CollectionBannerItemType[] = collectionItem.map((data: { name: any; image: { src: any; }; }) => ({
+    title: data.name,
+    ctaText: 'Test',
+    imageSrc: data.image.src
+  }))
 
   return (
     <>
