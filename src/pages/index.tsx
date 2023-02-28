@@ -52,7 +52,8 @@ const Home: NextPage<HomeStaticProps> = ({ featuredProducts, collectionItem }) =
     },
   ];
 
-  const collectionItems: CollectionBannerItemType[] = collectionItem.map((data: { name: any; image: { src: any; }; }) => ({
+  const collectionItems: CollectionBannerItemType[] = collectionItem.map((data: { id: any; name: any; image: { src: any; }; }) => ({
+    id: data.id,
     title: data.name,
     ctaText: 'Xem chi tiết',
     imageSrc: data.image.src

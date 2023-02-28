@@ -28,3 +28,14 @@ export async function getProductByParentCategory(categoryId: number) {
   return apiResponse.data;
 }
 
+export async function getCategoryIdInfo(categoryId: number) {
+  const apiResponse = await getWooCommerceData<ProductDTO>(`products/categories/${categoryId}`);  
+  return apiResponse.data;
+}
+
+export async function getProductByCategory(categoryId: number) {
+  const apiResponse = await getWooCommerceData<ProductDTO>(`products?category=${categoryId}`);  
+  return apiResponse.data;
+  
+}
+

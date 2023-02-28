@@ -16,6 +16,9 @@ interface ProductItemProps {
 const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
   const router = useRouter();
 
+  console.log('121212', product);
+  
+
   const navigateToProductDetails = () => {
     router.push(`/products/${product.id}`);
   };
@@ -27,8 +30,10 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
     >
       <Image
         className={styles['product-item-image']}
-        src={assets.OrangeFlower3}
+        src={product.images[0].src}
         alt="Product Item"
+        width={'100%'}
+        height={'100%'}
       />
 
       <div className={styles['product-item-details']}>
