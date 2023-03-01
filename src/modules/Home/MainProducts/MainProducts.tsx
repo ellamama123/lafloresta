@@ -24,6 +24,8 @@ const MainProducts: React.FC<MainProductsProps> = ({
     return aggregate;
   }, [] as ProductDTO[][]);
 
+  console.log('1111', products);
+  
   return (
     <section className={c([styles['main-products'], ...classNames])}>
       <Text.H2>Sản phẩm chính</Text.H2>
@@ -44,12 +46,16 @@ const MainProducts: React.FC<MainProductsProps> = ({
                     ],
                   ])}
                 >
-                  <Image
-                    src={product.images[0].src}
-                    alt={'Product 1'}
-                    layout="fill"
-                    objectFit="cover"
-                  />
+                  <div>
+                    <Image
+                      src={product.images[0].src}
+                      alt={'Product 1'}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                    <p>{product.name}</p>
+                    <p>{product.short_description}</p>
+                  </div>
                 </li>
               ))}
             </div>

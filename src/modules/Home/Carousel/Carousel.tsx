@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React, { useRef, useState } from 'react';
 import Slider from 'react-slick';
+import { useRouter } from 'next/router';
 
 import { ArrowLeft } from '../../../shared/assets/icons/ArrowLeft';
 import { ArrowRight } from '../../../shared/assets/icons/ArrowRight';
@@ -10,6 +11,7 @@ import styles from './Carousel.module.scss';
 interface CarouselProps {
   classNames?: string[];
   carouselItems: CarouselItemProps[];
+  id: number
 }
 
 const Carousel: React.FC<CarouselProps> = ({
@@ -62,6 +64,8 @@ const Carousel: React.FC<CarouselProps> = ({
     sliderRef.current?.slickPrev();
   };
 
+
+
   return (
     <section className={c([styles['carousel'], ...classNames])}>
       <Slider {...settings} ref={sliderRef}>
@@ -89,13 +93,19 @@ const Carousel: React.FC<CarouselProps> = ({
 export interface CarouselItemProps {
   displayText: string;
   imageSrc: StaticImageData;
+  id: number;
 }
 const CarouselItem: React.FC<CarouselItemProps> = ({
   imageSrc,
   displayText,
+  id
 }) => {
+  const router = useRouter()
+  const navigateToProductDetails = (id: any) => {
+    router.push(`/products/${id}`);
+  };
   return (
-    <div className={styles['carousel-item']}>
+    <div className={styles['carousel-item']}  onClick={() => navigateToProductDetails(id)}>
       <Image layout="fill" objectFit="cover" src={imageSrc} alt={displayText} />
     </div>
   );

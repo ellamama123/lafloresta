@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 
-import { getAllFeaturedProducts, getProductByParentCategory } from '../api/products';
+import { getAllFeaturedProducts, getProductByParentCategory, getProductByCategory } from '../api/products';
 import { ProductDTO } from '../api/types';
 import Blogs from '../modules/Home/Blogs';
 import Carousel, { CarouselItemType } from '../modules/Home/Carousel';
@@ -17,40 +17,35 @@ import { ENABLE_BLOGS } from '../shared/flags/features';
 
 interface HomeStaticProps {
   featuredProducts: ProductDTO[];
+  collectionItem: any;
+  carouselItem: any;
 }
 
 export const getStaticProps: GetStaticProps<HomeStaticProps> = async () => {
+  const carouselItem = await getProductByCategory(30)
   const featuredProducts = await getAllFeaturedProducts();
-
+  
   const collectionItem = await getProductByParentCategory(31)
   return {
     props: {
       featuredProducts,
-      collectionItem
+      collectionItem,
+      carouselItem
     },
   };
 };
 
-const Home: NextPage<HomeStaticProps> = ({ featuredProducts, collectionItem }) => {
+const Home: NextPage<HomeStaticProps> = ({ featuredProducts, collectionItem, carouselItem }) => {
   const TOP_FEATURED_PRODUCTS_COUNT = 4;
   const topFeaturedProducts = featuredProducts.filter(
     (_, i) => i < TOP_FEATURED_PRODUCTS_COUNT
   );
 
-  const carouselItems: CarouselItemType[] = [
-    {
-      displayText: 'Dan Dan Collection',
-      imageSrc: assets.Book1,
-    },
-    {
-      displayText: 'ClownZ Collection',
-      imageSrc: assets.Book2,
-    },
-    {
-      displayText: 'Chipu Collection',
-      imageSrc: assets.Book3,
-    },
-  ];
+  const carouselItems: CarouselItemType[] = carouselItem.map((data: { id: any; name: any; images:[{ src: any; }]; }) => ({
+    displayText: data?.name,
+    imageSrc: data?.images[0]?.src,
+    id: data?.id
+  }))
 
   const collectionItems: CollectionBannerItemType[] = collectionItem.map((data: { id: any; name: any; image: { src: any; }; }) => ({
     id: data.id,
