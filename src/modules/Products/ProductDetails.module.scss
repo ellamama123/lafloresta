@@ -44,3 +44,32 @@
     }
   }
 }
+
+
+@media (max-width:1000px) {
+  .product-details {
+    flex-direction: column;
+
+    &-information {
+      flex: 1;
+      padding-left: 0rem;
+      margin-top: 2rem;
+  
+      &-divider {
+        margin-top: 2rem;
+      }
+  
+      &-size {
+        display: flex;
+        &-label {
+          margin-top: 2rem;
+          margin-right: 1rem;
+        }
+      }
+  
+      &-accordion {
+        margin-top: 1.5rem;
+      }
+    }
+  }
+}

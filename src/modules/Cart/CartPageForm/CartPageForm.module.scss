@@ -19,4 +19,10 @@
     justify-content: flex-end;
     margin-top: 1rem;
   }
+
+  @media (max-width:1000px) {
+    &-btn-wrapper {
+      justify-content: center;
+    }
+  }
 }

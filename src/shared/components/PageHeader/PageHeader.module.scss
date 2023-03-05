@@ -12,3 +12,18 @@
     color: $white-1;
   }
 }
+
+@media (max-width:1000px) {
+  .page-header {
+    background-color: $grey-2;
+    background-image: url('../../assets/img/LivingRoom.jpg');
+    background-position: center;
+    background-blend-mode: multiply;
+  
+    padding: 5rem 1rem;
+  
+    &-text {
+      color: $white-1;
+    }
+  }
+}

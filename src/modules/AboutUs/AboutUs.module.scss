@@ -7,3 +7,15 @@
     }
   }
 }
+
+@media (max-width:1000px) {
+  .about-us {
+    &-info {
+      padding: 4rem 1rem;
+  
+      &-item {
+        margin-bottom: 6rem;
+      }
+    }
+  }
+}

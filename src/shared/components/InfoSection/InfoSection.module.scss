@@ -26,7 +26,12 @@
   }
 
   &-title {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &-head-para {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
   }
 
   &-para {
@@ -36,5 +41,16 @@
   &-cta {
     margin-top: 4rem;
     float: right;
+  }
+}
+
+@media (max-width:1000px) {
+  .info-section {
+    flex-direction: column;
+    border-top: 10px solid $primary-color-4;
+
+    &-line {
+      height: 0px;
+    }
   }
 }

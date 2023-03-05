@@ -9,6 +9,7 @@ import styles from './InfoSection.module.scss';
 export interface InfoSectionProps {
   classNames?: string[];
   title: string;
+  headParagraphs: string;
   paragraphs?: string[];
   imageSrc: StaticImageData;
   reverse?: boolean;
@@ -18,6 +19,7 @@ export interface InfoSectionProps {
 const InfoSection: React.FC<InfoSectionProps> = ({
   classNames = [],
   title,
+  headParagraphs,
   paragraphs = [],
   imageSrc,
   reverse,
@@ -31,9 +33,19 @@ const InfoSection: React.FC<InfoSectionProps> = ({
         ...classNames,
       ])}
     >
+      <div className={styles['info-section-col']}>
+        <Image
+          layout="fill"
+          objectFit="cover"
+          src={imageSrc}
+          alt="About us landing photo"
+        />
+      </div>
+      <div className={styles['info-section-spacer']} />
       <article className={styles['info-section-col']}>
         <div className={styles['info-section-line']} />
         <Text.H2 classNames={[styles['info-section-title']]}>{title}</Text.H2>
+        <Text.H5 classNames={[styles['info-section-head-para']]}>{headParagraphs}</Text.H5>
         {paragraphs.map((para, i) => (
           <Text.Body2 key={i} classNames={[styles['info-section-para']]}>
             {para}
@@ -44,17 +56,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
           <Text.Body1>{ctaDisplay}</Text.Body1>
         </Button>
       </article>
-
-      <div className={styles['info-section-spacer']} />
-
-      <div className={styles['info-section-col']}>
-        <Image
-          layout="fill"
-          objectFit="cover"
-          src={imageSrc}
-          alt="About us landing photo"
-        />
-      </div>
+     
     </section>
   );
 };

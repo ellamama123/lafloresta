@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import React from 'react';
 
 import { ProductDTO } from '../../../api/types';
-import assets from '../../../shared/assets';
 import Text from '../../../shared/components/Text';
 import { formatVnd } from '../../../shared/utils/currency';
 import { extractTextFromHTML } from '../../../shared/utils/string';
@@ -15,9 +14,6 @@ interface ProductItemProps {
 
 const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
   const router = useRouter();
-
-  console.log('121212', product);
-  
 
   const navigateToProductDetails = () => {
     router.push(`/products/${product.id}`);
@@ -32,8 +28,8 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
         className={styles['product-item-image']}
         src={product.images[0].src}
         alt="Product Item"
-        width={'100%'}
-        height={'100%'}
+        width={'300px'}
+        height={'300px'}
       />
 
       <div className={styles['product-item-details']}>
