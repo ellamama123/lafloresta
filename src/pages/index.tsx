@@ -1,5 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
+import { getSiteInfo } from '../api/posts';
 
 import { getAllFeaturedProducts, getProductByParentCategory, getProductByCategory } from '../api/products';
 import { ProductDTO } from '../api/types';
@@ -24,13 +25,16 @@ interface HomeStaticProps {
 export const getStaticProps: GetStaticProps<HomeStaticProps> = async () => {
   const carouselItem = await getProductByCategory(30)
   const featuredProducts = await getAllFeaturedProducts();
+
+  const blogItems = await getSiteInfo()  
   
   const collectionItem = await getProductByParentCategory(31)
   return {
     props: {
       featuredProducts,
       collectionItem,
-      carouselItem
+      carouselItem,
+      blogItems
     },
   };
 };
