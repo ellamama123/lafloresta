@@ -87,8 +87,9 @@ const Home: NextPage<HomeStaticProps> = ({ featuredProducts, collectionItem, car
         <InfoSection
           title="Về chúng tôi"
           imageSrc={assets.Showroom}
+          headParagraphs={'LA FLORESTA VÀ HÀNH TRÌNH 30 NĂM BIẾN GIẤC MƠ HOA THÀNH HIỆN THỰC'}
           paragraphs={[
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo.',
+            'Hơn 30 năm nghiên cứu và phát triển trong ngành hoa lụa, chúng tôi là một trong những nhà cung cấp hoa lụa chất lượng và thẩm mỹ hàng đầu Việt Nam. Chúng tôi luôn nỗ lực mang đến Quý khách hàng những sản phẩm hoa lụa chất lượng, độc đáo, chuyên nghiệp nhất trên thị trường, mang lại màu sắc tươi mới tới cho môi trường làm việc của các công ty, tổ chức, gia đình… trên toàn quốc. Hiện nay, công ty chúng tôi đang cung cấp ra thị trường rất nhiều mẫu mã sản phẩm với các dòng hàng đa dạng với tiêu chí chất lượng, đi đôi với giá cả và dịch vụ tốt nhất, cam kết đem lại cho Quý khách hàng những trải nghiệm thú vị.',
           ]}
           ctaDisplay="Tìm hiểu thêm"
           classNames={[styles['home-info-section']]}

@@ -33,6 +33,15 @@ const Products: React.FC<ProductsProps> = ({ classNames, products }) => {
     slidesToShow: SLIDES_TO_SHOW,
     slidesToScroll: SLIDES_TO_SCROLL,
     beforeChange: (_: number, next: number) => setActiveSlide(next),
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+    ]
   };
 
   const next = () => {

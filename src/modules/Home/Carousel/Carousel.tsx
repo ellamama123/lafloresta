@@ -11,7 +11,6 @@ import styles from './Carousel.module.scss';
 interface CarouselProps {
   classNames?: string[];
   carouselItems: CarouselItemProps[];
-  id: number
 }
 
 const Carousel: React.FC<CarouselProps> = ({

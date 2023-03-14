@@ -22,6 +22,7 @@ const AboutUs: NextPage = () => {
           <InfoSection
             title="Lịch sử"
             imageSrc={assets.Showroom}
+            headParagraphs={''}
             paragraphs={[
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo.',
             ]}
@@ -31,6 +32,7 @@ const AboutUs: NextPage = () => {
           />
           <InfoSection
             title="Thương hiệu"
+            headParagraphs={''}
             imageSrc={assets.Showroom}
             paragraphs={[
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo.',
@@ -41,6 +43,7 @@ const AboutUs: NextPage = () => {
           <InfoSection
             title="Dự án tiêu biểu"
             imageSrc={assets.Showroom}
+            headParagraphs={''}
             paragraphs={[
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo.',
             ]}
