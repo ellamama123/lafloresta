@@ -20,14 +20,16 @@ interface HomeStaticProps {
   featuredProducts: ProductDTO[];
   collectionItem: any;
   carouselItem: any;
+  blogItems: any;
 }
 
 export const getStaticProps: GetStaticProps<HomeStaticProps> = async () => {
   const carouselItem = await getProductByCategory(30)
   const featuredProducts = await getAllFeaturedProducts();
 
-  const blogItems = await getSiteInfo()  
-  
+  const blogItems = await getSiteInfo()    
+  console.log('4444', blogItems);
+
   const collectionItem = await getProductByParentCategory(31)
   return {
     props: {
@@ -39,7 +41,7 @@ export const getStaticProps: GetStaticProps<HomeStaticProps> = async () => {
   };
 };
 
-const Home: NextPage<HomeStaticProps> = ({ featuredProducts, collectionItem, carouselItem }) => {
+const Home: NextPage<HomeStaticProps> = ({ featuredProducts, collectionItem, carouselItem, blogItems }) => {
   const TOP_FEATURED_PRODUCTS_COUNT = 4;
   const topFeaturedProducts = featuredProducts.filter(
     (_, i) => i < TOP_FEATURED_PRODUCTS_COUNT
@@ -53,10 +55,19 @@ const Home: NextPage<HomeStaticProps> = ({ featuredProducts, collectionItem, car
 
   const collectionItems: CollectionBannerItemType[] = collectionItem.map((data: { id: any; name: any; image: { src: any; }; }) => ({
     id: data.id,
-    title: data.name,
+    title: data.name, 
     ctaText: 'Xem chi tiết',
     imageSrc: data.image.src
   }))
+
+  
+  
+  // const blogItem: any = blogItems.map((data: any) => ({
+  //   title: data.title.rendered,
+  // }))
+  // console.log('44442', blogItem);
+  
+  
 
   return (
     <>
@@ -87,9 +98,8 @@ const Home: NextPage<HomeStaticProps> = ({ featuredProducts, collectionItem, car
         <InfoSection
           title="Về chúng tôi"
           imageSrc={assets.Showroom}
-          headParagraphs={'LA FLORESTA VÀ HÀNH TRÌNH 30 NĂM BIẾN GIẤC MƠ HOA THÀNH HIỆN THỰC'}
           paragraphs={[
-            'Hơn 30 năm nghiên cứu và phát triển trong ngành hoa lụa, chúng tôi là một trong những nhà cung cấp hoa lụa chất lượng và thẩm mỹ hàng đầu Việt Nam. Chúng tôi luôn nỗ lực mang đến Quý khách hàng những sản phẩm hoa lụa chất lượng, độc đáo, chuyên nghiệp nhất trên thị trường, mang lại màu sắc tươi mới tới cho môi trường làm việc của các công ty, tổ chức, gia đình… trên toàn quốc. Hiện nay, công ty chúng tôi đang cung cấp ra thị trường rất nhiều mẫu mã sản phẩm với các dòng hàng đa dạng với tiêu chí chất lượng, đi đôi với giá cả và dịch vụ tốt nhất, cam kết đem lại cho Quý khách hàng những trải nghiệm thú vị.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo.',
           ]}
           ctaDisplay="Tìm hiểu thêm"
           classNames={[styles['home-info-section']]}

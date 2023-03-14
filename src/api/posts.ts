@@ -1,10 +1,7 @@
 import { extractTextFromHTML } from '../shared/utils/string';
 import { api } from './api';
 
-export const getSiteInfo = () => {
-  const SITE_INFO_POST_ID = 1;
-  return api.get(`/posts/${SITE_INFO_POST_ID}`);
-};
+
 
 interface WPPost {
   id: number;
@@ -17,6 +14,14 @@ interface WPPost {
     protected: boolean;
   };
 }
+
+export const getSiteInfo = async () => {
+  const CATEGORY_ID = 33;
+  const response = await api.get(`/posts?categories=${CATEGORY_ID}&per_page=10`);
+  
+  return response.data;
+};
+
 export const getDeliveryInfo = async () => {
   const SITE_DELIVERY_INFO = 27;
   const response = await api.get<WPPost>(`/posts/${SITE_DELIVERY_INFO}`);

@@ -45,6 +45,14 @@ export interface ProductDTO {
   images: Image[];
 }
 
+export interface PostDTO {
+  id: number,
+  title: string,
+  short_desc: string,
+  desc: string,
+  date: string,
+}
+
 interface OrderItem {
   product_id: number;
   quantity: number;

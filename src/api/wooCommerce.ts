@@ -34,3 +34,12 @@ export async function postWooCommerceData<T>(
     throw error;
   }
 }
+
+export async function getWpData(apiWp: string){
+  try {
+    const response = await api.get(apiWp);
+    return response
+  } catch (error) {
+    throw error;
+  }
+}

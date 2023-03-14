@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import Slider from 'react-slick';
 
+import { PostDTO } from '../../../api/types';
 import { ArrowLeft } from '../../../shared/assets/icons/ArrowLeft';
 import { ArrowRight } from '../../../shared/assets/icons/ArrowRight';
 import Button from '../../../shared/components/Button';
@@ -11,6 +12,7 @@ import styles from './Blogs.module.scss';
 
 interface BlogsProps {
   classNames: string[];
+  blogs: PostDTO;
 }
 
 const Blogs: React.FC<BlogsProps> = ({ classNames }) => {
