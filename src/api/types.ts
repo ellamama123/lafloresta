@@ -51,6 +51,7 @@ export interface PostDTO {
   short_desc: string,
   desc: string,
   date: string,
+  imageSrc: string
 }
 
 interface OrderItem {

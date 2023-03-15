@@ -12,14 +12,13 @@ import styles from './Blogs.module.scss';
 
 interface BlogsProps {
   classNames: string[];
-  blogs: PostDTO;
+  blogs: PostDTO[];
 }
 
-const Blogs: React.FC<BlogsProps> = ({ classNames }) => {
+const Blogs: React.FC<BlogsProps> = ({ classNames, blogs }) => {
   const sliderRef = useRef<Slider>(null);
   const [activeSlide, setActiveSlide] = useState(0);
 
-  const ITEMS_LIMIT = 8;
   const SLIDES_TO_SHOW = 4;
   const SLIDES_TO_SCROLL = 1;
 
@@ -67,8 +66,8 @@ const Blogs: React.FC<BlogsProps> = ({ classNames }) => {
       </div>
 
       <Slider {...settings} ref={sliderRef}>
-        {[...new Array(ITEMS_LIMIT)].map((i) => (
-          <BlogItem key={i} />
+        {blogs.map((item, index) => (
+          <BlogItem key={index} item={item} />
         ))}
       </Slider>
     </section>

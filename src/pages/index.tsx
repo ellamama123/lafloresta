@@ -28,9 +28,11 @@ export const getStaticProps: GetStaticProps<HomeStaticProps> = async () => {
   const featuredProducts = await getAllFeaturedProducts();
 
   const blogItems = await getSiteInfo()    
-  console.log('4444', blogItems);
 
   const collectionItem = await getProductByParentCategory(31)
+
+  console.log('9999', blogItems);
+  
   return {
     props: {
       featuredProducts,
@@ -59,15 +61,15 @@ const Home: NextPage<HomeStaticProps> = ({ featuredProducts, collectionItem, car
     ctaText: 'Xem chi tiết',
     imageSrc: data.image.src
   }))
-
   
-  
-  // const blogItem: any = blogItems.map((data: any) => ({
-  //   title: data.title.rendered,
-  // }))
-  // console.log('44442', blogItem);
-  
-  
+  const blogItem: any = blogItems.map((item: any) => ({
+    id: item.id,
+    title: item.title.rendered,
+    short_desc: item.excerpt.rendered,
+    desc: item.content.rendered,
+    date: item.modified,
+    imageSrc: item._embedded['wp:featuredmedia'] ? item._embedded['wp:featuredmedia'][0].source_url : ''
+  }))  
 
   return (
     <>
@@ -106,7 +108,7 @@ const Home: NextPage<HomeStaticProps> = ({ featuredProducts, collectionItem, car
           reverse
         />
 
-        {ENABLE_BLOGS && <Blogs classNames={[styles['home-blogs']]} />}
+        {ENABLE_BLOGS && <Blogs classNames={[styles['home-blogs']]} blogs={blogItem} />}
       </div>
     </>
   );
